@@ -28,14 +28,9 @@ public class frmTemperatura extends javax.swing.JFrame {
         textoTemp = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         BtnIngreso = new javax.swing.JButton();
-        celCheck = new javax.swing.JRadioButton();
-        farCheck = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        CajaConversor = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,7 +39,7 @@ public class frmTemperatura extends javax.swing.JFrame {
         jDesktopPane1.setForeground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -54,7 +49,7 @@ public class frmTemperatura extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Temperatura ");
+        jLabel1.setText("Seleccione el Tipo de Conversion:");
         jLabel1.setToolTipText("");
 
         BtnIngreso.setBackground(new java.awt.Color(0, 153, 153));
@@ -65,33 +60,6 @@ public class frmTemperatura extends javax.swing.JFrame {
             }
         });
 
-        celCheck.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(celCheck);
-        celCheck.setSelected(true);
-
-        farCheck.setBackground(new java.awt.Color(255, 255, 255));
-        buttonGroup1.add(farCheck);
-
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("°C");
-
-        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("°F");
-
-        jLabel5.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("de ");
-        jLabel5.setToolTipText("");
-
-        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Origen");
-        jLabel6.setToolTipText("");
-
         jLabel7.setBackground(new java.awt.Color(204, 204, 204));
         jLabel7.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -100,6 +68,15 @@ public class frmTemperatura extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resource/pinguinogordofachero (1).png"))); // NOI18N
 
+        CajaConversor.setBackground(new java.awt.Color(255, 255, 255));
+        CajaConversor.setForeground(new java.awt.Color(0, 0, 0));
+        CajaConversor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "°C a °F", "°C a K", "°F a °C", "°F a K", "K a °C", "K a °F" }));
+        CajaConversor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CajaConversorActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -107,27 +84,8 @@ public class frmTemperatura extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(jLabel5))
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(celCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(farCheck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 28, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(218, 218, 218))
+                    .addComponent(CajaConversor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -138,38 +96,28 @@ public class frmTemperatura extends javax.swing.JFrame {
                                 .addGap(72, 72, 72)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(textoTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnIngreso))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(BtnIngreso))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel2)))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(farCheck)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(celCheck))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)))
-                .addGap(25, 25, 25)
+                .addComponent(CajaConversor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(BtnIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addGap(53, 53, 53)
+                        .addComponent(BtnIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -181,7 +129,7 @@ public class frmTemperatura extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,52 +175,47 @@ public class frmTemperatura extends javax.swing.JFrame {
         entrada = entrada.replace(',', '.');
         
         double celsius;
-        if(celCheck.isSelected()){
         try {
-            // Comprobar formato básico: signo opcional, dígitos, opcional parte decimal
-            if (!entrada.matches("[+-]?[0-9]+(\\.[0-9]+)?")) {
-                throw new NumberFormatException("Formato inválido");
+            double valor = Double.parseDouble(textoTemp.getText());
+            int seleccion = CajaConversor.getSelectedIndex();
+            double resultado = 0;
+            String conversion = "";
+            
+            switch (seleccion) {
+                case 0: // Celsius a Fahrenheit
+                    resultado = (valor * 9/5) + 32;
+                    conversion = String.format("%.2f °C = %.2f °F", valor, resultado);
+                    break;
+                case 1: // Celsius a Kelvin
+                    resultado = valor + 273.15;
+                    conversion = String.format("%.2f °C = %.2f K", valor, resultado);
+                    break;
+                case 2: // Fahrenheit a Celsius
+                    resultado = (valor - 32) * 5/9;
+                    conversion = String.format("%.2f °F = %.2f °C", valor, resultado);
+                    break;
+                case 3: // Fahrenheit a Kelvin
+                    resultado = (valor - 32) * 5/9 + 273.15;
+                    conversion = String.format("%.2f °F = %.2f K", valor, resultado);
+                    break;
+                case 4: // Kelvin a Celsius
+                    resultado = valor - 273.15;
+                    conversion = String.format("%.2f K = %.2f °C", valor, resultado);
+                    break;
+                case 5: // Kelvin a Fahrenheit
+                    resultado = (valor - 273.15) * 9/5 + 32;
+                    conversion = String.format("%.2f K = %.2f °F", valor, resultado);
+                    break;
             }
-            celsius = Double.parseDouble(entrada);
+            
+            JOptionPane.showMessageDialog(this, conversion, "Resultado de Conversión", 
+                JOptionPane.INFORMATION_MESSAGE);
+                
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Valor inválido. Escribe un número válido (ej: 25 o -4.5).", "Error de formato", JOptionPane.ERROR_MESSAGE);
-            textoTemp.requestFocus();
-            textoTemp.selectAll();
-            return;
+            JOptionPane.showMessageDialog(this, 
+                "Por favor, ingrese un valor numérico válido", 
+                "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        double fahrenheit = celsius * 9.0 / 5.0 + 32.0;
-        
-        DecimalFormat df = new DecimalFormat("0.00");
-        String resultado = df.format(fahrenheit);
-
-
-        String mensaje = String.format("%.2f °C son %s °F", celsius, resultado);
-        JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
-      }else if(farCheck.isSelected()){
-          double farenheit=0;
-            try {
-            // Comprobar formato básico: signo opcional, dígitos, opcional parte decimal
-            if (!entrada.matches("[+-]?[0-9]+(\\.[0-9]+)?")) {
-                throw new NumberFormatException("Formato inválido");
-            }
-            farenheit = Double.parseDouble(entrada);
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Valor inválido. Escribe un número válido (ej: 25 o -4.5).", "Error de formato", JOptionPane.ERROR_MESSAGE);
-            textoTemp.requestFocus();
-            textoTemp.selectAll();
-            return;
-        }
-        
-         celsius = (farenheit -32.0)*(5.0/9.0);
-        
-        DecimalFormat df = new DecimalFormat("0.00");
-        String resultado = df.format(celsius);
-
-
-        String mensaje = String.format("%.2f °F son %s °C", farenheit, resultado);
-        JOptionPane.showMessageDialog(this, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
-      }
     } 
         public static void main(String args[]) {
             /* Set the Nimbus look and feel */
@@ -295,20 +238,19 @@ public class frmTemperatura extends javax.swing.JFrame {
             }
         });       
     }//GEN-LAST:event_BtnIngresoActionPerformed
+
+    private void CajaConversorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaConversorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaConversorActionPerformed
                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnIngreso;
+    private javax.swing.JComboBox<String> CajaConversor;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JRadioButton celCheck;
-    private javax.swing.JRadioButton farCheck;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField textoTemp;
